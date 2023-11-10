@@ -1,0 +1,8 @@
+# ENV (API)
+.env
+
+# NODE MODULES (DEPENDENCIES)
+/node_modules/
+
+# BUILD
+/build/
