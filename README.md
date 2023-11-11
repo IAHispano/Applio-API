@@ -26,7 +26,7 @@ npm run dev
 Retrieve information about multiple models using the following API endpoint:
 
 ```http
-GET /key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
+GET https://api.applio.org/key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -42,7 +42,7 @@ GET /key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
 Search for specific models by name using the following API endpoint:
 
 ```http
-GET /key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
+GET https://api.applio.org/key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
 ```
 
 | Parameter | Type     | Description                       |
@@ -57,7 +57,7 @@ GET /key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
 To find specific models based on their associated usernames:
 
 ```http
-GET /key=(secret)/models/user=(username)?type=(kits.ai / rvc)
+GET https://api.applio.org/key=(secret)/models/user=(username)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -71,7 +71,7 @@ GET /key=(secret)/models/user=(username)?type=(kits.ai / rvc)
 Generate a user API KEY, you must have an administrator API KEY.
 
 ```http
-POST /key=(secret)/generateToken
+POST https://api.applio.org/key=(secret)/generateToken
 ```
 
 | Parameter  | Type     | Description                            |
@@ -84,7 +84,7 @@ POST /key=(secret)/generateToken
 Upload a model, you must have an administrator API KEY.
 
 ```http
-POST /key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username
+POST https://api.applio.org/key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username
 ```
 
 | Parameter  | Type     | Description                            |
@@ -108,7 +108,7 @@ POST /key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:
 Check the latency of the API.
 
 ```http
-GET /ping
+GET https://api.applio.org/ping
 ```
 
 Make sure to replace `(secret)` in the API endpoints with your actual API KEY to authenticate your requests.
