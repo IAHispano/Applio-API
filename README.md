@@ -26,7 +26,7 @@ npm run dev
 Retrieve information about multiple models using the following API endpoint:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
+GET /key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -42,7 +42,7 @@ GET https://api.applio.org/key=(secret)/models/perpage=(number)/page=(number)?ty
 Search for specific models by name using the following API endpoint:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
+GET /key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
 ```
 
 | Parameter | Type     | Description                       |
@@ -57,7 +57,7 @@ GET https://api.applio.org/key=(secret)/models/search?name=(model_name)&type=(ki
 To find specific models based on their associated usernames:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/user=(username)?type=(kits.ai / rvc)
+GET /key=(secret)/models/user=(username)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -71,7 +71,7 @@ GET https://api.applio.org/key=(secret)/models/user=(username)?type=(kits.ai / r
 Generate a user API KEY, you must have an administrator API KEY.
 
 ```http
-POST https://api.applio.org/key=(secret)/generateToken
+POST /key=(secret)/generateToken
 ```
 
 | Parameter  | Type     | Description                            |
@@ -79,12 +79,36 @@ POST https://api.applio.org/key=(secret)/generateToken
 | `key`  | `string` | **Required**. This action requires an ADMIN API KEY for authorization. |
 
 
+### Upload Model
+
+Upload a model, you must have an administrator API KEY.
+
+```http
+POST /key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username
+```
+
+| Parameter  | Type     | Description                            |
+| :--------- | :------- | :------------------------------------- |
+| `key`  | `string` | **Required**. This action requires an ADMIN API KEY for authorization. |
+| `id` | `string` | **Required**. Unique identifier for the model. |
+| `name` | `string` | **Required**. Name of the model. |
+| `link` | `string` | **Required**. Link associated with the model. |
+| `image_url` | `string` | **Required**. URL of the model's image. |
+| `type` | `string` | **Required**. Type of the model. |
+| `epochs` | `string` | **Required**. Number of epochs for the model. |
+| `created_at` | `string` | **Required**. Creation date of the model. |
+| `algorithm` | `string` | **Required**. Algorithm used by the model. |
+| `author_id` | `string` | **Required**. Identifier of the model's author. |
+| `author_username` | `string` | **Required**. Username of the model's author. |
+
+
+
 ### Check API Status
 
 Check the latency of the API.
 
 ```http
-GET https://api.applio.org/ping
+GET /ping
 ```
 
 Make sure to replace `(secret)` in the API endpoints with your actual API KEY to authenticate your requests.

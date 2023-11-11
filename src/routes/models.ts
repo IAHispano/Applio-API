@@ -8,6 +8,10 @@ const supabaseUrl = process.env.SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_KEY as string;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+const supabaseUrl2 = process.env.MODELS_URL as string;
+const supabaseKey2 = process.env.MODELS_KEY as string;
+const supabase2 = createClient(supabaseUrl2, supabaseKey2);
+
 router.get('/perpage=:perpage/page=:page', async (req, res) => {
   const page = parseInt(req.params.page); 
   let pageSize = parseInt(req.params.perpage);
@@ -105,7 +109,47 @@ router.get('/user=:username', customLimiter, async (req, res) => {
   }
 });
 
+router.post('/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username', customLimiter, async (req, res) => {
+  try {
+    const { data: user } = await supabase
+      .from('tokens') 
+      .select('role')
+      .eq('token', req.apiKey); 
 
+    const isAdmin = user && user.length > 0 && user[0].role === 'admin';
+
+    if (!isAdmin) {
+      return res.status(403).json({ error: "Unauthorized. Only administrators can perform this operation." });
+    }
+
+    const { id, name, link, image_url, type, epochs, created_at, algorithm, author_id, author_username } = req.params;
+    const dataToUpload = {
+      id,
+      name,
+      link,
+      image_url,
+      type,
+      epochs,
+      created_at,
+      algorithm,
+      author_id,
+      author_username,
+      ...req.body,
+    };
+
+    const { error } = await supabase2
+      .from('models')
+      .upsert([dataToUpload]);
+
+    if (error) {
+      return res.status(500).json({ error: "Error uploading data", details: error.message });
+    }
+
+    return res.json({ success: true, message: "Data uploaded correctly" });
+  } catch (error) {
+    return res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 
 
