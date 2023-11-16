@@ -6,9 +6,12 @@ require('dotenv').config();
 const supabase = createClient(process.env.SUPABASE_URL as string, process.env.SUPABASE_KEY as string);
 
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 150, // 150 request per 15 minutes
+  windowMs: 24 * 60 * 60 * 1000, // 24 h
+  max: 50, // 50 request per 24 h
 });
+
+
+
 
 declare global {
     namespace Express {
@@ -56,6 +59,27 @@ declare global {
       if (isAdmin) {
         next();
       } else {
+        const { data: requestData, error: requestError } = await supabase
+          .from('tokens')
+          .select('usage')
+          .eq('token', apikey);
+  
+        if (requestError) {
+          console.error('Error with requests:', requestError);
+        }
+  
+        const currentRequestCount = requestData ? requestData[0]?.usage || 0 : 0;
+  
+        const updatedCount = currentRequestCount + 1;
+        const { error } = await supabase
+          .from('tokens')
+          .update({ usage: updatedCount })
+          .eq('token', apikey);
+  
+        if (error) {
+          console.error('Error at update logs;', error);
+        }
+  
         limiter(req, res, next);
       }
     } else {

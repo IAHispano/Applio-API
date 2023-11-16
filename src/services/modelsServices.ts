@@ -1,7 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 require('dotenv').config();
 
-const supabase = createClient(process.env.MODELS_URL as string, process.env.MODELS_KEY as string);
+const supabaseUrl = process.env.SUPABASE_URL as string;
+const supabaseKey = process.env.SUPABASE_KEY as string;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 
 export const findByName = async (searchTerm: string) => {

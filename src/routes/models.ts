@@ -8,11 +8,8 @@ const supabaseUrl = process.env.SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_KEY as string;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const supabaseUrl2 = process.env.MODELS_URL as string;
-const supabaseKey2 = process.env.MODELS_KEY as string;
-const supabase2 = createClient(supabaseUrl2, supabaseKey2);
 
-router.get('/perpage=:perpage/page=:page', async (req, res) => {
+router.get('/perpage=:perpage/page=:page', customLimiter, async (req, res) => {
   const page = parseInt(req.params.page); 
   let pageSize = parseInt(req.params.perpage);
   const type = req.query.type as string;
@@ -137,7 +134,7 @@ router.post('/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algor
       ...req.body,
     };
 
-    const { error } = await supabase2
+    const { error } = await supabase
       .from('models')
       .upsert([dataToUpload]);
 

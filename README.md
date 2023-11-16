@@ -26,7 +26,7 @@ npm run dev
 Retrieve information about multiple models using the following API endpoint:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
+GET /key=(secret)/models/perpage=(number)/page=(number)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -42,7 +42,7 @@ GET https://api.applio.org/key=(secret)/models/perpage=(number)/page=(number)?ty
 Search for specific models by name using the following API endpoint:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
+GET /key=(secret)/models/search?name=(model_name)&type=(kits.ai / rvc)
 ```
 
 | Parameter | Type     | Description                       |
@@ -57,7 +57,7 @@ GET https://api.applio.org/key=(secret)/models/search?name=(model_name)&type=(ki
 To find specific models based on their associated usernames:
 
 ```http
-GET https://api.applio.org/key=(secret)/models/user=(username)?type=(kits.ai / rvc)
+GET /key=(secret)/models/user=(username)?type=(kits.ai / rvc)
 ```
 
 | Parameter  | Type     | Description                            |
@@ -71,7 +71,7 @@ GET https://api.applio.org/key=(secret)/models/user=(username)?type=(kits.ai / r
 Generate a user API KEY, you must have an administrator API KEY.
 
 ```http
-POST https://api.applio.org/key=(secret)/generateToken
+POST /key=(secret)/generateToken
 ```
 
 | Parameter  | Type     | Description                            |
@@ -84,7 +84,7 @@ POST https://api.applio.org/key=(secret)/generateToken
 Upload a model, you must have an administrator API KEY.
 
 ```http
-POST https://api.applio.org/key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username
+POST /key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:algorithm/:author_id/:author_username
 ```
 
 | Parameter  | Type     | Description                            |
@@ -108,7 +108,7 @@ POST https://api.applio.org/key=(secret)/upload/:id/:name/:link/:image_url/:type
 Check the latency of the API.
 
 ```http
-GET https://api.applio.org/ping
+GET /ping
 ```
 
 Make sure to replace `(secret)` in the API endpoints with your actual API KEY to authenticate your requests.
@@ -121,10 +121,14 @@ In the table below, you will find the results of our performance tests for the A
 
 | Request Count | Response Time | Version          |
 | ------------- | ------------------------| -----------------|
-| 100           | 1.0s                  | Beta      |
+| 100           | 1.0s                      | Beta      |
 | 250           | 1.1s                      | Beta      |
 | 500           | 1.4s                      | Beta      |
 | 1000          | 1.6s                      | Beta    |
+| 100           | 0.3s                      | 1.0     |
+| 250           | 0.5s                      | 1.0        |
+| 500           | 0.9s                      | 1.0       |
+| 1000          | 1.3s                      | 1.0      |
 
 
 #### Attempts to scrape data from our API are strictly prohibited.
