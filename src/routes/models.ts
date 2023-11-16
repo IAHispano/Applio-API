@@ -47,7 +47,7 @@ router.get('/', (_req, res) => {
   res.send('You must limit the number of models received.');
 });
 
-router.get('/search', customLimiter, async (req, res) => {
+router.get('/search', async (req, res) => {
   const name = req.query.name as string;
 
   try {
