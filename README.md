@@ -66,19 +66,6 @@ GET /key=(secret)/models/user=(username)?type=(kits.ai / rvc)
 | `type`      | `string` | Optional. Type of model to fetch |
 
 
-### Generate an API KEY
-
-Generate a user API KEY, you must have an administrator API KEY.
-
-```http
-POST /key=(secret)/generateToken
-```
-
-| Parameter  | Type     | Description                            |
-| :--------- | :------- | :------------------------------------- |
-| `key`  | `string` | **Required**. This action requires an ADMIN API KEY for authorization. |
-
-
 ### Upload Model
 
 Upload a model, you must have an administrator API KEY.
@@ -101,6 +88,46 @@ POST /key=(secret)/upload/:id/:name/:link/:image_url/:type/:epochs/:created_at/:
 | `author_id` | `string` | **Required**. Identifier of the model's author. |
 | `author_username` | `string` | **Required**. Username of the model's author. |
 
+
+### Get All Blogs
+
+Retrieve information about multiple blogs using the following API endpoint:
+
+```http
+GET /key=(secret)/blog/perpage=(number)/page=(number)
+```
+
+| Parameter  | Type     | Description                            |
+| :--------- | :------- | :------------------------------------- |
+| `perpage`  | `number` | **Required**. Number of models to view (max 25). |
+| `page`  | `number` | **Required**. Page number to be displayed |
+
+
+### Get All Users
+
+Retrieve information about multiple users using the following API endpoint, you must have an administrator API KEY:
+
+```http
+GET /key=(secret)/user/perpage=(number)/page=(number)
+```
+
+| Parameter  | Type     | Description                            |
+| :--------- | :------- | :------------------------------------- |
+| `perpage`  | `number` | **Required**. Number of models to view (max 25). |
+| `page`  | `number` | **Required**. Page number to be displayed |
+
+
+### Generate an API KEY
+
+Generate a user API KEY, you must have an administrator API KEY.
+
+```http
+POST /key=(secret)/generateToken
+```
+
+| Parameter  | Type     | Description                            |
+| :--------- | :------- | :------------------------------------- |
+| `key`  | `string` | **Required**. This action requires an ADMIN API KEY for authorization. |
 
 
 ### Check API Status
@@ -129,6 +156,10 @@ In the table below, you will find the results of our performance tests for the A
 | 250           | 0.5s                      | 1.0        |
 | 500           | 0.9s                      | 1.0       |
 | 1000          | 1.3s                      | 1.0      |
+| 100           | 0.3s                      | 1.2     |
+| 250           | 0.4s                      | 1.2        |
+| 500           | 0.6s                      | 1.2       |
+| 1000          | 1.2s                      | 1.2      |
 
 
 #### Attempts to scrape data from our API are strictly prohibited.
