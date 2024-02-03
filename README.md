@@ -40,7 +40,6 @@ Note that the models must be in json in the `models` folder.
 | :--------- | :------- | :------------------------------------- |
 | `perpage`  | `number` | **Required**. Number of models to view (max 20). |
 | `page`  | `number` | **Required**. Page number to be displayed |
-| `type`  | `string` | Optional. Type of model to fetch |
 
 ## Performance Testing
 
