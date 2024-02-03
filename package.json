@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./out"
+  },
+  "dependencies": {
+    "hono": "^3.12.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

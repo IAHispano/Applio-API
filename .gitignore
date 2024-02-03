@@ -1,0 +1,5 @@
+# NODE MODULES (DEPENDENCIES)
+/node_modules/
+
+# OUT
+/out/
