@@ -31,7 +31,7 @@ GET /ping
 
 ## Performance Testing
 
-[Applio-API Performance Test](https://i.imgur.com/bBhy9qQ.png)
+![Applio-API Performance Test](https://i.imgur.com/bBhy9qQ.png)
 
 
 #### Attempts to scrape data from our API are strictly prohibited.
