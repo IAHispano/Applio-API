@@ -1,6 +1,12 @@
-# Applio API (Development branch)
+`Development Version` 
 
-## Installation
+<a href="https://applio.org/api">
+  <p align="center">
+    <img src="https://i.imgur.com/VUdNuNu.png" alt="applio-api-v2 banner">
+  </p>
+</a>
+  
+<h2> Installation </h2>
 
 To get started with the Applio API, follow these simple installation steps:
 
@@ -43,7 +49,7 @@ Note that the models must be in json in the `models` folder.
 
 ## Performance Testing
 
-![Applio-API Performance Test](https://i.imgur.com/bBhy9qQ.png)
+![Applio-API Performance Test](https://i.imgur.com/oPv6ACQ.png)
 
 
 
