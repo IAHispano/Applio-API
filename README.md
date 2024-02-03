@@ -1,8 +1,5 @@
 # Applio API (Development branch)
 
-Welcome to the Applio API for development.
-
-
 ## Installation
 
 To get started with the Applio API, follow these simple installation steps:
@@ -32,9 +29,6 @@ GET /ping
 ## Performance Testing
 
 ![Applio-API Performance Test](https://i.imgur.com/bBhy9qQ.png)
-
-
-#### Attempts to scrape data from our API are strictly prohibited.
 
 
 
