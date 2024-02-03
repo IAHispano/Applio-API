@@ -1,10 +1,6 @@
+![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
 `Development Version` 
 
-<a href="https://applio.org/api">
-  <p align="center">
-    <img src="https://i.imgur.com/VUdNuNu.png" alt="applio-api-v2 banner">
-  </p>
-</a>
   
 <h2> Installation </h2>
 
