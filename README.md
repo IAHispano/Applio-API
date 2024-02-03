@@ -18,13 +18,29 @@ bun run dev
 
 ## API Reference
 
-### Check API Status
+### Check API status
 
 Check the latency of the API.
 
 ```http
 GET /ping
 ```
+
+### Get all models
+
+Retrieve information about multiple models using the following API endpoint:
+
+```http
+GET /models?page=(page)&max=(perpage)
+```
+
+Note that the models must be in json in the `models` folder.
+
+| Parameter  | Type     | Description                            |
+| :--------- | :------- | :------------------------------------- |
+| `perpage`  | `number` | **Required**. Number of models to view (max 20). |
+| `page`  | `number` | **Required**. Page number to be displayed |
+| `type`  | `string` | Optional. Type of model to fetch |
 
 ## Performance Testing
 

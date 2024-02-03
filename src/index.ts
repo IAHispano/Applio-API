@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import pingRouter from "./routes/ping"
+import modelsRouter from "./routes/models"
 
 const app = new Hono()
 
@@ -15,6 +16,7 @@ app.onError((err, c) => {
 
 
 app.route("/ping", pingRouter)
+app.route("/models", modelsRouter)
 
 
 export default {
