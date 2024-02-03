@@ -1,6 +1,6 @@
 # Applio API
 
-Welcome to the Applio API, your gateway to a vast repository of more than 20,000 RVC models and over 500,000 kits.ai components.
+Welcome to the Applio API for development.
 
 
 ## Installation
