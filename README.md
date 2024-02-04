@@ -1,6 +1,5 @@
+`Development Version` `Version 2` 
 ![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
-`Development Version` 
-
   
 <h2> Installation </h2>
 
@@ -45,7 +44,7 @@ Note that the models must be in json in the `models` folder.
 
 ## Performance Testing
 
-![Applio-API Performance Test](https://i.imgur.com/oPv6ACQ.png)
+![Applio-API Performance Test](https://i.imgur.com/JNt8hIP.png)
 
 
 
