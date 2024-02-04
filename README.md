@@ -165,7 +165,7 @@ In the table below, you will find the results of our performance tests for the A
 #### Attempts to scrape data from our API are strictly prohibited.
 
 <p align="center">
-    <img src="https://docs.applio.org/assets/applio.png" alt="applio" />
+    <img src="https://docs.applio.org/assets/applio_banner.png" alt="applio" />
 </p>
 
 
