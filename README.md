@@ -63,7 +63,7 @@ Note that the models must be in json in the `models` folder.
 
 ## Performance Testing
 
-![Applio-API Performance Test](https://i.imgur.com/bBhy9qQ.png)
+![Applio-API Performance Test](https://i.imgur.com/JNt8hIP.png)
 
 
 
