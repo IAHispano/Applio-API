@@ -32,8 +32,6 @@ app.get("/", (context) => {
   );
 });
 
-// Handler for 404 Not Found
-
 // Function to get list of route files
 const getRouteFiles = () => {
   const routesDir = path.join(__dirname, "routes");
