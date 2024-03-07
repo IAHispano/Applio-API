@@ -1,7 +1,20 @@
 {
+  "name": "applio-api",
+  "version": "3.0.0",
+  "description": "Robust functionality, focused on granting convenient access to AI models developed using the RVC technology.",
+  "main": "index.js",
   "scripts": {
     "dev": "bun run --hot src/index.ts"
   },
+  "keywords": [
+    "AI",
+    "Hispano",
+    "RVC",
+    "API",
+    "Applio"
+  ],
+  "author": "AI Hispano",
+  "license": "CC BY-NC 4.0 DEED",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "express": "^4.18.3",
