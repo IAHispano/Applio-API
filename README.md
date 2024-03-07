@@ -41,13 +41,9 @@ Access http://localhost:3000 in your browser.
 
 ### Ping
 
-```sh
+```http
 GET /ping
 ```
-
-| Method | Endpoint | Type | Required | Description           |
-| ------ | -------- | ---- | -------- | --------------------- |
-| GET    | /ping    |      |          | Retrieve API latency. |
 
 ## Knowledge
 
