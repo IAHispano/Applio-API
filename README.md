@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+- [Todo](#todo)
 - [About](#about)
   - [Terms of Use](#terms-of-use)
 - [Setup](#setup)
@@ -10,6 +11,18 @@
 - [API Endpoints](#api-endpoints)
 - [Knowledge](#knowledge)
 - [License](#license)
+
+## Todo
+
+> [!WARNING]
+> The current branch you are in is still under development and is unstable.
+
+- [ ] Add rate limiting
+- [ ] Add blogs endpoint
+- [ ] Add guides endpoint
+- [ ] Add models endpoint
+- [ ] Add upload endpoint
+- [ ] Add users endpoint
 
 ## About
 
