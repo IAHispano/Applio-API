@@ -1,4 +1,7 @@
 # Applio API
+`Development Branch` `Version 2` 
+
+![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
 
 ## Table of Contents
 
@@ -22,7 +25,6 @@
 - [ ] Add guides endpoint
 - [ ] Add models endpoint
 - [ ] Add upload endpoint
-- [ ] Add users endpoint
 
 ## About
 
@@ -57,6 +59,17 @@ Access http://localhost:3000 in your browser.
 ```http
 GET /ping
 ```
+
+### Users
+
+```http
+GET /users
+```
+
+| Header Name  | Content                            |
+| :--------- | :------------------------------------- |
+| `perPage`  **Required**. Number of profiles to view (max 20). |
+| `page`   **Required**. Page number to be displayed. |
 
 ## Knowledge
 

@@ -1,5 +1,6 @@
 import { app } from "./config";
 import pingRoute from "./routes/ping";
+import usersRoute from "./routes/users";
 
 export const setupRoutes = () => {
   // Handler for root route
@@ -14,5 +15,5 @@ export const setupRoutes = () => {
     //app.route("/models", modelsRoute);
     //app.route("/blogs", blogsRoute);
     //app.route("/guides", guidesRoute);
-    //app.route("/users", usersRoute);
+  app.route("/users", usersRoute);
 };
