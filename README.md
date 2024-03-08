@@ -52,7 +52,7 @@ Access http://localhost:3000 in your browser.
 
 ## API Endpoints
 
-* = Is required.
+r = Is required.
 
 ### Ping
 
@@ -68,8 +68,8 @@ GET /users
 
 | Header Name  | Content                            |
 | :--------- | :------------------------------------- |
-| `perPage` *. | Number of profiles to view (max 20). |
-| `page` *. | Page number to be displayed. |
+| `perPage`  r. | Number of profiles to view (max 20). |
+| `page`  r. | Page number to be displayed. |
 
 ## Knowledge
 
