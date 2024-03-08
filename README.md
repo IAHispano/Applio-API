@@ -51,8 +51,6 @@ Access http://localhost:3000 in your browser.
 
 ## API Endpoints
 
-* = Is required.
-
 ### Ping
 
 ```http
