@@ -65,10 +65,36 @@ GET /users
 
 #### Parameters
 
-| Header    | Required | Value               | Description                          |
-| --------- | -------- | ------------------- | ------------------------------------ |
-| `perPage` | Yes      | Number (1 to 20)    | Number of profiles to view per page. |
-| `page`    | Yes      | Number (1 to 20858) | Page number to be displayed.         |
+| Header    | Required | Default | Value               | Description                          |
+| --------- | -------- | ------- | ------------------- | ------------------------------------ |
+| `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
+| `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
+
+### Blogs
+
+```http
+GET /blogs
+```
+
+#### Parameters
+
+| Header    | Required | Default | Value            | Description                       |
+| --------- | -------- | ------- | ---------------- | --------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
+
+### Guides
+
+```http
+GET /guides
+```
+
+#### Parameters
+
+| Header    | Required | Default | Value            | Description                       |
+| --------- | -------- | ------- | ---------------- | --------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
 
 ## Knowledge
 
