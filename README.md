@@ -1,5 +1,4 @@
-# Applio API
-![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
+![Applio API Image](https://github.com/IAHispano/Applio-API/assets/133521603/a938534e-1335-4d3f-919f-83fca6c301a9)
 
 ## Table of Contents
 
