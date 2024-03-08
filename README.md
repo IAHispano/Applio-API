@@ -24,10 +24,12 @@
 > The current branch you are in is still under development and is unstable.
 
 - [ ] Add rate limiting
-- [ ] Add blogs endpoint
-- [ ] Add guides endpoint
-- [ ] Add models endpoint
 - [ ] Add upload endpoint
+- [ ] Add search models
+- [ ] Add search users
+- [ ] Add search guides
+- [ ] Add search blogs
+- [ ] Add filters at all serivces
 
 ## About
 
