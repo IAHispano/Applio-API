@@ -1,6 +1,4 @@
 # Applio API
-`Development Branch` `Version 2` 
-
 ![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
 
 ## Table of Contents
@@ -68,8 +66,8 @@ GET /users
 
 | Header Name  | Content                            |
 | :--------- | :------------------------------------- |
-| `perPage`  **Required**. Number of profiles to view (max 20). |
-| `page`   **Required**. Page number to be displayed. |
+| `perPage`  **Required**. | Number of profiles to view (max 20). |
+| `page`   **Required**. | Page number to be displayed. |
 
 ## Knowledge
 
