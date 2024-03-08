@@ -17,8 +17,6 @@
   "license": "CC BY-NC 4.0 DEED",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
-    "express": "^4.18.3",
-    "express-rate-limit": "^7.2.0",
     "hono": "^4.0.9",
     "prettier": "^3.2.5"
   },
