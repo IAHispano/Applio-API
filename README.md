@@ -1,5 +1,4 @@
-# Applio API
-![Applio API](https://github.com/IAHispano/Applio-API/assets/133521603/fdae2eaf-5fb9-447a-86dc-a741384f911c)
+![Applio API Image](https://github.com/IAHispano/Applio-API/assets/133521603/a938534e-1335-4d3f-919f-83fca6c301a9)
 
 ## Table of Contents
 
@@ -52,7 +51,7 @@ Access http://localhost:3000 in your browser.
 
 ## API Endpoints
 
-r = Is required.
+* = Is required.
 
 ### Ping
 
@@ -66,10 +65,12 @@ GET /ping
 GET /users
 ```
 
-| Header Name  | Content                            |
-| :--------- | :------------------------------------- |
-| `perPage`  r. | Number of profiles to view (max 20). |
-| `page`  r. | Page number to be displayed. |
+#### Parameters
+
+| Header    | Required | Value               | Description                          |
+| --------- | -------- | ------------------- | ------------------------------------ |
+| `perPage` | Yes      | Number (1 to 20)    | Number of profiles to view per page. |
+| `page`    | Yes      | Number (1 to 20858) | Page number to be displayed.         |
 
 ## Knowledge
 
