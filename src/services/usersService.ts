@@ -10,8 +10,6 @@ export const getEntriesEasyPaged = async (page: number, pageSize: number) => {
       .select("*")
       .range(startIndex, endIndex - 1);
 
-      console.log(data);
-
     if (error) {
       console.error("Error getting paged data", error);
       return [];
