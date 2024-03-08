@@ -9,6 +9,12 @@
   - [Installation](#installation)
   - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+  - [Ping](#ping)
+  - [Models](#models)
+  - [Users](#users)
+  - [Blogs](#blogs)
+  - [Guides](#guides)
+  - [Upload](#upload)
 - [Knowledge](#knowledge)
 - [License](#license)
 
@@ -57,6 +63,16 @@ Access http://localhost:3000 in your browser.
 GET /ping
 ```
 
+### Models
+
+```http
+GET /models
+```
+
+#### Parameters
+
+| Header | Required | Default | Value | Description |
+
 ### Users
 
 ```http
@@ -95,6 +111,16 @@ GET /guides
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
+
+### Upload
+
+```http
+GET /upload
+```
+
+#### Parameters
+
+| Header | Required | Default | Value | Description |
 
 ## Knowledge
 
