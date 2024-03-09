@@ -9,6 +9,12 @@
   - [Installation](#installation)
   - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+  - [Ping](#ping)
+  - [Models](#models)
+  - [Users](#users)
+  - [Blogs](#blogs)
+  - [Guides](#guides)
+  - [Upload](#upload)
 - [Knowledge](#knowledge)
 - [License](#license)
 
@@ -18,10 +24,12 @@
 > The current branch you are in is still under development and is unstable.
 
 - [ ] Add rate limiting
-- [ ] Add blogs endpoint
-- [ ] Add guides endpoint
-- [ ] Add models endpoint
 - [ ] Add upload endpoint
+- [ ] Add search models
+- [ ] Add search users
+- [ ] Add search guides
+- [ ] Add search blogs
+- [ ] Add filters at all serivces
 
 ## About
 
@@ -57,6 +65,18 @@ Access http://localhost:3000 in your browser.
 GET /ping
 ```
 
+### Models
+
+```http
+GET /models
+```
+
+#### Parameters
+
+| Header | Required | Default | Value | Description |
+| ------ | -------- | ------- | ----- | ----------- |
+|        |          |         |       |             |
+
 ### Users
 
 ```http
@@ -65,10 +85,48 @@ GET /users
 
 #### Parameters
 
-| Header    | Required | Value               | Description                          |
-| --------- | -------- | ------------------- | ------------------------------------ |
-| `perPage` | Yes      | Number (1 to 20)    | Number of profiles to view per page. |
-| `page`    | Yes      | Number (1 to 20858) | Page number to be displayed.         |
+| Header    | Required | Default | Value               | Description                          |
+| --------- | -------- | ------- | ------------------- | ------------------------------------ |
+| `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
+| `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
+
+### Blogs
+
+```http
+GET /blogs
+```
+
+#### Parameters
+
+| Header    | Required | Default | Value            | Description                       |
+| --------- | -------- | ------- | ---------------- | --------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
+
+### Guides
+
+```http
+GET /guides
+```
+
+#### Parameters
+
+| Header    | Required | Default | Value            | Description                       |
+| --------- | -------- | ------- | ---------------- | --------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
+
+### Upload
+
+```http
+GET /upload
+```
+
+#### Parameters
+
+| Header | Required | Default | Value | Description |
+| ------ | -------- | ------- | ----- | ----------- |
+|        |          |         |       |             |
 
 ## Knowledge
 

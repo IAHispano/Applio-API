@@ -1,4 +1,4 @@
-import { supabaseClient } from "../config";
+import { supabaseClient, maxPageSize } from "../config";
 
 export const findByName = async (searchTerm: string) => {
   try {
@@ -57,7 +57,10 @@ export const findByUsername = async (searchTerm: string) => {
   }
 };
 
-export const getEntriesEasyPaged = async (page: number, pageSize: number) => {
+export const getEntriesEasyPaged = async (
+  page: number = 1,
+  pageSize: number = maxPageSize
+) => {
   try {
     const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;
@@ -80,9 +83,9 @@ export const getEntriesEasyPaged = async (page: number, pageSize: number) => {
 };
 
 export const getEntriesFilteredByType = async (
-  page: number,
-  pageSize: number,
-  type: string,
+  page: number = 1,
+  pageSize: number = maxPageSize,
+  type: string
 ) => {
   try {
     const startIndex = (page - 1) * pageSize;
@@ -107,7 +110,7 @@ export const getEntriesFilteredByType = async (
 };
 export const findByUsernameAndType = async (
   searchUsername: string,
-  searchType: string,
+  searchType: string
 ) => {
   try {
     const { data, error } = await supabaseClient
