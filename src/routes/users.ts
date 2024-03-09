@@ -1,32 +1,28 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getEntriesEasyPaged } from "../services/usersService";
-
-const max_page_size = 20;
+import { getUsers, getUsersByName } from "../services/usersService";
+import { maxPageSize } from "../config";
 
 const users = new Hono();
 
 users.get("/", async (c) => {
   try {
+    const username = c.req.header("username");
     const page = Number(c.req.header("page"));
     let pageSize = Number(c.req.header("perPage"));
 
-    if (pageSize > max_page_size) {
+    if (pageSize > maxPageSize) {
       return c.text(
-        `Page size cannot exceed, the max page size is ${max_page_size}.`,
+        `Page size cannot exceed, the max page size is ${maxPageSize}.`,
         400
       );
     }
 
-    if (page && pageSize) {
-      const data = await getEntriesEasyPaged(page, pageSize);
+    if (username) {
+      const data = await getUsersByName(username, page, pageSize);
       return c.json(data);
-    } else {
-      return c.text(
-        "You need to add the header perPage and page to get the data. More information at https://applio.org/api/docs",
-        400
-      );
     }
+
   } catch (error) {
     users.onError(errorHandler);
   }

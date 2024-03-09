@@ -8,8 +8,8 @@ const models = new Hono();
 models.get("/", async (c) => {
   try {
     const title = c.req.header("title");
-    const page = Number(c.req.header("page")) || 1;
-    let pageSize = Number(c.req.header("perPage")) || 20;
+    // const page = Number(c.req.header("page")) || 1;
+    let pageSize = Number(c.req.header("perPage"));
 
     if (pageSize > max_page_size) {
       return c.text(

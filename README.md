@@ -74,6 +74,8 @@ GET /models
 #### Parameters
 
 | Header | Required | Default | Value | Description |
+| ------ | -------- | ------- | ----- | ----------- |
+|        |          |         |       |             |
 
 ### Users
 
@@ -123,6 +125,8 @@ GET /upload
 #### Parameters
 
 | Header | Required | Default | Value | Description |
+| ------ | -------- | ------- | ----- | ----------- |
+|        |          |         |       |             |
 
 ## Knowledge
 

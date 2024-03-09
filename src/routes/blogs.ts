@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getEntriesEasyPaged } from "../services/blogsService";
+import { getBlogs } from "../services/blogsService";
 
 const max_page_size = 20;
 const blogs = new Hono();
@@ -17,7 +17,7 @@ blogs.get("/", async (c) => {
       );
     }
 
-    const data = await getEntriesEasyPaged(page, pageSize);
+    const data = await getBlogs(page, pageSize);
     return c.json(data);
   } catch (error) {
     return errorHandler(c, error);
