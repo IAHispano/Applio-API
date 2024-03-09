@@ -24,7 +24,6 @@
 > The current branch you are in is still under development and is unstable.
 
 - [ ] Add upload endpoint
-- [ ] Add search blogs
 - [ ] Add filters at all serivces
 - [ ] Bearer Auth
 
@@ -102,6 +101,7 @@ GET /blogs
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
+| `title`    | False    | None       | Title of blog | Name of the blog you want to find.         |
 
 ### Guides
 
@@ -115,7 +115,7 @@ GET /guides
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `title`    | False    | None       | Name of guide | Name of the guide you want to find.         |
+| `title`    | False    | None       | Title of guide | Name of the guide you want to find.         |
 
 ### Upload
 

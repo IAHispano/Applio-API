@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getBlogs } from "../services/blogsService";
+import { getBlogs, getBlogsByTitle } from "../services/blogsService";
 
 const max_page_size = 20;
 const blogs = new Hono();
@@ -9,6 +9,7 @@ blogs.get("/", async (c) => {
   try {
     const page = Number(c.req.header("page")) || 1;
     let pageSize = Number(c.req.header("perPage")) || 20;
+    const title = c.req.header("title");
 
     if (pageSize > max_page_size) {
       return c.text(
@@ -17,8 +18,16 @@ blogs.get("/", async (c) => {
       );
     }
 
+    if (title) {
+      const data = await getBlogsByTitle(title);
+      return c.json(data);
+    }
+
+    if (!title) {
     const data = await getBlogs(page, pageSize);
     return c.json(data);
+    }
+
   } catch (error) {
     return errorHandler(c, error);
   }
