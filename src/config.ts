@@ -9,6 +9,8 @@ export const port = parseInt(process.env.PORT || "3000");
 export const routesDir = path.join(__dirname, process.env.ROUTES_DIR || "./routes");
 export const faviconPath = process.env.FAVICON_PATH || "./src/public/favicon.ico";
 export const maxPageSize = parseInt(process.env.MAX_PAGE_SIZE || "20");
+export const premiumRateLimit = parseInt(process.env.premiumRateLimit || "300");
+export const defaultRateLimit = parseInt(process.env.defaultRateLimit || "100");
 
 // Supabase
 export const supabaseUrl = process.env.SUPABASE_URL || "";
