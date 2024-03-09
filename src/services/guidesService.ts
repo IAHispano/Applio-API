@@ -21,3 +21,22 @@ export const getEntriesEasyPaged = async (page: number = 1, pageSize: number = m
     return [];
   }
 };
+
+export const findByName = async (searchTerm: string) => {
+  try {
+    const { data, error } = await supabaseClient
+      .from("guides")
+      .select("*")
+      .filter("title", "ilike", `${searchTerm}%`);
+
+    if (error) {
+      console.error("Error when searching by name", error);
+      return [];
+    }
+
+    return data || [];
+  } catch (error) {
+    console.error("Error when searching by name", error);
+    return [];
+  }
+};
