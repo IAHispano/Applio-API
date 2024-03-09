@@ -24,7 +24,6 @@
 > The current branch you are in is still under development and is unstable.
 
 - [ ] Add upload endpoint
-- [ ] Add search models
 - [ ] Add search guides
 - [ ] Add search blogs
 - [ ] Add filters at all serivces
@@ -74,7 +73,9 @@ GET /models
 
 | Header | Required | Default | Value | Description |
 | ------ | -------- | ------- | ----- | ----------- |
-|        |          |         |       |             |
+| `perPage  ` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
+| `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
+| `name`    | False    | None       | Name of model | Name of the model you want to find.         |
 
 ### Users
 
