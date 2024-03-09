@@ -23,7 +23,6 @@
 > [!WARNING]
 > The current branch you are in is still under development and is unstable.
 
-- [ ] Add rate limiting
 - [ ] Add upload endpoint
 - [ ] Add search models
 - [ ] Add search users
