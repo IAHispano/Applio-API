@@ -29,6 +29,7 @@
 - [ ] Add search guides
 - [ ] Add search blogs
 - [ ] Add filters at all serivces
+- [ ] Bearer Auth
 
 ## About
 
