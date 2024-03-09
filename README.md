@@ -75,7 +75,6 @@ GET /models
 | Header | Required | Default | Value | Description |
 | ------ | -------- | ------- | ----- | ----------- |
 |        |          |         |       |             |
-| `apiKey`    | True    |        | uuid | Your api key.       |
 
 ### Users
 
@@ -89,7 +88,6 @@ GET /users
 | --------- | -------- | ------- | ------------------- | ------------------------------------ |
 | `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
 | `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
-| `apiKey`    | True    |        | uuid | Your api key.       |
 
 ### Blogs
 
@@ -103,7 +101,6 @@ GET /blogs
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `apiKey`    | True    |        | uuid | Your api key.       |
 
 ### Guides
 
@@ -117,7 +114,6 @@ GET /guides
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `apiKey`    | True    |        | uuid | Your api key.       |
 
 ### Upload
 
@@ -130,7 +126,6 @@ GET /upload
 | Header | Required | Default | Value | Description |
 | ------ | -------- | ------- | ----- | ----------- |
 |        |          |         |       |             |
-| `apiKey`    | True    |       | uuid | Your api key.       |
 
 ## Knowledge
 
