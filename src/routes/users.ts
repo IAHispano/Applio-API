@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getUsers, getUsersByName } from "../services/usersService";
+import { getUsersByName } from "../services/usersService";
 import { maxPageSize } from "../config";
 
 const users = new Hono();
