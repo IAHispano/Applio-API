@@ -25,7 +25,6 @@
 
 - [ ] Add upload endpoint
 - [ ] Add search models
-- [ ] Add search users
 - [ ] Add search guides
 - [ ] Add search blogs
 - [ ] Add filters at all serivces
@@ -89,6 +88,7 @@ GET /users
 | --------- | -------- | ------- | ------------------- | ------------------------------------ |
 | `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
 | `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
+| `username`    | False    | None       | Username | Username of the user you want to find.         |
 
 ### Blogs
 
