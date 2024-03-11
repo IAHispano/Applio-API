@@ -23,7 +23,6 @@
 > [!WARNING]
 > The current branch you are in is still under development and is unstable.
 
-- [ ] Add upload endpoint
 - [ ] Add filters at all serivces
 - [ ] Bearer Auth
 
@@ -73,7 +72,7 @@ GET /models
 | ------ | -------- | ------- | ----- | ----------- |
 | `perPage  ` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
-| `name`    | False    | None       | Name of model | Name of the model you want to find.         |
+| `name`    | False    | None       | String | Name of the model you want to find.         |
 
 ### Users
 
@@ -87,7 +86,7 @@ GET /users
 | --------- | -------- | ------- | ------------------- | ------------------------------------ |
 | `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
 | `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
-| `username`    | False    | None       | Username | Username of the user you want to find.         |
+| `username`    | False    | None       | String | Username of the user you want to find.         |
 
 ### Blogs
 
@@ -101,7 +100,7 @@ GET /blogs
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `title`    | False    | None       | Title of blog | Name of the blog you want to find.         |
+| `title`    | False    | None       | String | Name of the blog you want to find.         |
 
 ### Guides
 
@@ -115,7 +114,7 @@ GET /guides
 | --------- | -------- | ------- | ---------------- | --------------------------------- |
 | `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `title`    | False    | None       | Title of guide | Name of the guide you want to find.         |
+| `title`    | False    | None       | String | Name of the guide you want to find.         |
 
 ### Upload
 
@@ -127,7 +126,17 @@ GET /upload
 
 | Header | Required | Default | Value | Description |
 | ------ | -------- | ------- | ----- | ----------- |
-|        |          |         |       |             |
+| `id` | true | None | Number |  Model ID |
+| `name` | true | None | String |  Model name |
+| `link` | true | None | String |  Model link |
+| `image` | true | None | String |  Model image url |
+| `type` | true | None | String |  Model type |
+| `epochs` | true | None | Number | Model epochs |
+| `createdAt` | true | None | Any |  Model created at date |
+| `algorithm` | true | None | String |  Model algorithm |
+| `authorId` | true | None | String |  Author ID |
+| `authorUsername` | true | None | String |  Author username |
+
 
 ## Knowledge
 

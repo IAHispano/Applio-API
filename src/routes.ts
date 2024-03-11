@@ -5,7 +5,7 @@ import usersRoute from "./routes/users";
 import modelsRoute from "./routes/models";
 import blogsRoute from "./routes/blogs";
 import guidesRoute from "./routes/guides";
-// import uploadRoute from "./routes/upload";
+import uploadRoute from "./routes/upload";
 
 export const setupRoutes = () => {
   // Handler for root route
@@ -21,5 +21,5 @@ export const setupRoutes = () => {
   app.route("/blogs", blogsRoute);
   app.route("/guides", guidesRoute);
   app.route("/users", usersRoute);
-  // app.route("/upload", uploadRoute);
+  app.route("/upload", uploadRoute);
 };
