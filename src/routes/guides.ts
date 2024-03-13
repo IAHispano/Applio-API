@@ -1,17 +1,15 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
 import { findByName, getEntriesEasyPaged } from "../services/guidesService";
-import { maxPageSizeHandler } from "../utils/error/maxPageSizeHandler";
+import { minPage, maxPerPage } from "../config";
 
 const guides = new Hono();
 
 guides.get("/", async (c) => {
   try {
-    const page = Number(c.req.header("page")) || 1;
-    let pageSize = Number(c.req.header("perPage")) || 20;
+    const page = Number(c.req.header("page")) || minPage;
+    const pageSize = Number(c.req.header("perPage")) || maxPerPage;
     const title = c.req.header("title");
-
-    maxPageSizeHandler(c, pageSize);
 
     if (title) {
       const data = await findByName(title);

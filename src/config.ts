@@ -12,7 +12,8 @@ export const routesDir = path.join(
 export const faviconPath =
   process.env.FAVICON_PATH || "./src/public/favicon.ico";
 
-export const maxPageSize = parseInt(process.env.MAX_PAGE_SIZE || "20");
+export const maxPerPage = parseInt(process.env.MAX_PAGE_SIZE || "20");
+export const minPage = parseInt(process.env.MIN_PAGE || "1");
 
 // Rates
 export const premiumRateLimit = parseInt(process.env.premiumRateLimit || "300");

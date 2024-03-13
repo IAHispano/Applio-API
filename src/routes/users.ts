@@ -1,24 +1,28 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getUsersByName } from "../services/usersService";
-import { maxPageSizeHandler } from "../utils/error/maxPageSizeHandler";
+import { getUsersByName, getUsers } from "../services/usersService";
+import { minPage, maxPerPage } from "../config";
 
 const users = new Hono();
 
 users.get("/", async (c) => {
   try {
     const username = c.req.header("username");
-    const page = Number(c.req.header("page"));
-    let pageSize = Number(c.req.header("perPage"));
-
-    maxPageSizeHandler(c, pageSize);
+    const page = Number(c.req.header("page")) || minPage;
+    const pageSize = Number(c.req.header("perPage")) || maxPerPage;
 
     if (username) {
       const data = await getUsersByName(username, page, pageSize);
       return c.json(data);
     }
+
+    if (!username) {
+      const data = await getUsers(page, pageSize);
+      return c.json(data);
+    }
+
   } catch (error) {
-    users.onError(errorHandler);
+    return errorHandler(c, error);
   }
 });
 
