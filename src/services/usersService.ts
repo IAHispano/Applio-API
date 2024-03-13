@@ -1,6 +1,9 @@
 import { supabaseClient, maxPageSize } from "../config";
 
-export const getUsers = async (page: number = 1, pageSize: number = maxPageSize) => {
+export const getUsers = async (
+  page: number = 1,
+  pageSize: number = maxPageSize,
+) => {
   try {
     const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;
@@ -25,7 +28,7 @@ export const getUsers = async (page: number = 1, pageSize: number = maxPageSize)
 export const getUsersByName = async (
   username: string,
   page: number = 1,
-  pageSize: number = maxPageSize
+  pageSize: number = maxPageSize,
 ) => {
   try {
     const startIndex = (page - 1) * pageSize;

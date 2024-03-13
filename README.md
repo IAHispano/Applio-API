@@ -68,11 +68,11 @@ GET /models
 
 #### Parameters
 
-| Header | Required | Default | Value | Description |
-| ------ | -------- | ------- | ----- | ----------- |
-| `perPage  ` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
-| `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
-| `name`    | False    | None       | String | Name of the model you want to find.         |
+| Header      | Required | Default | Value               | Description                         |
+| ----------- | -------- | ------- | ------------------- | ----------------------------------- |
+| `perPage  ` | False    | 20      | Number (1 to 20)    | Number of blogs to view per page.   |
+| `page`      | False    | 1       | Number (1 to 20858) | Page number to be displayed.        |
+| `name`      | False    | None    | String              | Name of the model you want to find. |
 
 ### Users
 
@@ -82,11 +82,11 @@ GET /users
 
 #### Parameters
 
-| Header    | Required | Default | Value               | Description                          |
-| --------- | -------- | ------- | ------------------- | ------------------------------------ |
-| `perPage` | False    | 20      | Number (1 to 20)    | Number of profiles to view per page. |
-| `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
-| `username`    | False    | None       | String | Username of the user you want to find.         |
+| Header     | Required | Default | Value               | Description                            |
+| ---------- | -------- | ------- | ------------------- | -------------------------------------- |
+| `perPage`  | False    | 20      | Number (1 to 20)    | Number of profiles to view per page.   |
+| `page`     | False    | 1       | Number (1 to 20858) | Page number to be displayed.           |
+| `username` | False    | None    | String              | Username of the user you want to find. |
 
 ### Blogs
 
@@ -96,11 +96,11 @@ GET /blogs
 
 #### Parameters
 
-| Header    | Required | Default | Value            | Description                       |
-| --------- | -------- | ------- | ---------------- | --------------------------------- |
-| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
-| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `title`    | False    | None       | String | Name of the blog you want to find.         |
+| Header    | Required | Default | Value            | Description                        |
+| --------- | -------- | ------- | ---------------- | ---------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page.  |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.       |
+| `title`   | False    | None    | String           | Name of the blog you want to find. |
 
 ### Guides
 
@@ -110,11 +110,11 @@ GET /guides
 
 #### Parameters
 
-| Header    | Required | Default | Value            | Description                       |
-| --------- | -------- | ------- | ---------------- | --------------------------------- |
-| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
-| `page`    | False    | 1       | Number (1)       | Page number to be displayed.      |
-| `title`    | False    | None       | String | Name of the guide you want to find.         |
+| Header    | Required | Default | Value            | Description                         |
+| --------- | -------- | ------- | ---------------- | ----------------------------------- |
+| `perPage` | False    | 20      | Number (1 to 20) | Number of blogs to view per page.   |
+| `page`    | False    | 1       | Number (1)       | Page number to be displayed.        |
+| `title`   | False    | None    | String           | Name of the guide you want to find. |
 
 ### Upload
 
@@ -124,19 +124,18 @@ GET /upload
 
 #### Parameters
 
-| Header | Required | Default | Value | Description |
-| ------ | -------- | ------- | ----- | ----------- |
-| `id` | true | None | Number |  Model ID |
-| `name` | true | None | String |  Model name |
-| `link` | true | None | String |  Model link |
-| `image` | true | None | String |  Model image url |
-| `type` | true | None | String |  Model type |
-| `epochs` | true | None | Number | Model epochs |
-| `createdAt` | true | None | Any |  Model created at date |
-| `algorithm` | true | None | String |  Model algorithm |
-| `authorId` | true | None | String |  Author ID |
-| `authorUsername` | true | None | String |  Author username |
-
+| Header           | Required | Default | Value  | Description           |
+| ---------------- | -------- | ------- | ------ | --------------------- |
+| `id`             | true     | None    | Number | Model ID              |
+| `name`           | true     | None    | String | Model name            |
+| `link`           | true     | None    | String | Model link            |
+| `image`          | true     | None    | String | Model image url       |
+| `type`           | true     | None    | String | Model type            |
+| `epochs`         | true     | None    | Number | Model epochs          |
+| `createdAt`      | true     | None    | Any    | Model created at date |
+| `algorithm`      | true     | None    | String | Model algorithm       |
+| `authorId`       | true     | None    | String | Author ID             |
+| `authorUsername` | true     | None    | String | Author username       |
 
 ## Knowledge
 

@@ -19,10 +19,9 @@ guides.get("/", async (c) => {
     }
 
     if (!title) {
-    const data = await getEntriesEasyPaged(page, pageSize);
-    return c.json(data);
+      const data = await getEntriesEasyPaged(page, pageSize);
+      return c.json(data);
     }
-    
   } catch (error) {
     return errorHandler(c, error);
   }

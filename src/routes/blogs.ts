@@ -14,7 +14,7 @@ blogs.get("/", async (c) => {
     if (pageSize > max_page_size) {
       return c.text(
         `Page size cannot exceed, the max page size is ${max_page_size}.`,
-        400
+        400,
       );
     }
 
@@ -24,10 +24,9 @@ blogs.get("/", async (c) => {
     }
 
     if (!title) {
-    const data = await getBlogs(page, pageSize);
-    return c.json(data);
+      const data = await getBlogs(page, pageSize);
+      return c.json(data);
     }
-
   } catch (error) {
     return errorHandler(c, error);
   }

@@ -11,7 +11,7 @@ export const setupRoutes = () => {
   // Handler for root route
   app.get("/", (context: any) => {
     return context.text(
-      "Welcome to Applio API, check https://applio.org/api for more usage information."
+      "Welcome to Applio API, check https://applio.org/api for more usage information.",
     );
   });
 

@@ -59,7 +59,7 @@ export const findByUsername = async (searchTerm: string) => {
 
 export const getEntriesEasyPaged = async (
   page: number = 1,
-  pageSize: number = maxPageSize
+  pageSize: number = maxPageSize,
 ) => {
   try {
     const startIndex = (page - 1) * pageSize;
@@ -85,7 +85,7 @@ export const getEntriesEasyPaged = async (
 export const getEntriesFilteredByType = async (
   page: number = 1,
   pageSize: number = maxPageSize,
-  type: string
+  type: string,
 ) => {
   try {
     const startIndex = (page - 1) * pageSize;
@@ -110,7 +110,7 @@ export const getEntriesFilteredByType = async (
 };
 export const findByUsernameAndType = async (
   searchUsername: string,
-  searchType: string
+  searchType: string,
 ) => {
   try {
     const { data, error } = await supabaseClient
