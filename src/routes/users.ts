@@ -13,14 +13,19 @@ users.get("/", async (c) => {
 
     if (username) {
       const data = await getUsersByName(username, page, pageSize);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
 
     if (!username) {
       const data = await getUsers(page, pageSize);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
-
   } catch (error) {
     return errorHandler(c, error);
   }

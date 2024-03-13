@@ -13,11 +13,17 @@ models.get("/", async (c) => {
 
     if (title) {
       const data = await findByName(title);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
 
     if (!title) {
       const data = await getEntriesEasyPaged(page, pageSize);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
   } catch (error) {

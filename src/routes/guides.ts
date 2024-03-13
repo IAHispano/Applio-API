@@ -7,17 +7,23 @@ const guides = new Hono();
 
 guides.get("/", async (c) => {
   try {
+    const title = c.req.header("title");
     const page = Number(c.req.header("page")) || minPage;
     const pageSize = Number(c.req.header("perPage")) || maxPerPage;
-    const title = c.req.header("title");
 
     if (title) {
       const data = await findByName(title);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
 
     if (!title) {
       const data = await getEntriesEasyPaged(page, pageSize);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
   } catch (error) {
