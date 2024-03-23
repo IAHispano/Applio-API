@@ -1,18 +1,18 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
-import { getUsersByName } from "../services/usersService";
-import { maxPageSize } from "../config";
+import { getUsers, getUsersByName } from "../services/usersService";
+import { maxPerPage, minPage } from "../config";
 
 const users = new Hono();
 
 users.get("/", async (c) => {
   try {
     const username = c.req.header("username");
-    const page = Number(c.req.header("page"));
-    let pageSize = Number(c.req.header("perPage"));
+    const page = Number(c.req.header("page")) || minPage;
+    let pageSize = Number(c.req.header("perPage")) || maxPerPage;
 
-    if (pageSize > maxPageSize) {
-      const message = `Page size cannot exceed, the max page size is ${maxPageSize}.`;
+    if (pageSize > maxPerPage) {
+      const message = `Page size cannot exceed, the max page size is ${maxPerPage}.`;
       console.log(message);
       return c.text(message, 400);
     }

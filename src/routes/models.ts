@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
 import { findByAlgorithm, findByName, findByType, findByUsername, findByUsernameAndType, getEntriesEasyPaged } from "../services/modelsService";
-import { maxPageSize } from "../config";
+import { minPage, maxPerPage } from "../config";
 
 const models = new Hono();
 
@@ -14,8 +14,8 @@ models.get("/", async (c) => {
     const page = Number(c.req.header("page")) || minPage;
     const pageSize = Number(c.req.header("perPage")) || maxPerPage;
 
-    if (pageSize > maxPageSize) {
-      const message = `Page size cannot exceed, the max page size is ${maxPageSize}.`;
+    if (pageSize > maxPerPage) {
+      const message = `Page size cannot exceed, the max page size is ${maxPerPage}.`;
       console.log(message);
       return c.text(message, 400);
     }
