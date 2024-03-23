@@ -24,7 +24,6 @@
 > The current branch you are in is still under development and is unstable.
 
 - [ ] Add filters at all serivces
-- [ ] Bearer Auth
 
 ## About
 
@@ -54,6 +53,18 @@ Access http://localhost:3000 in your browser.
 
 ## API Endpoints
 
+### Warning
+
+```http
+GET *
+```
+
+| Header | Required | Default | Value | Description |
+| ------ | -------- | ------- | ----- | ----------- |
+| `Authorization  ` | True    | None      | String | Your API KEY. |
+
+You must generate your API KEY at https://applio.org/api.
+
 ### Ping
 
 ```http
@@ -68,11 +79,14 @@ GET /models
 
 #### Parameters
 
+
 | Header | Required | Default | Value | Description |
 | ------ | -------- | ------- | ----- | ----------- |
 | `perPage  ` | False    | 20      | Number (1 to 20) | Number of blogs to view per page. |
 | `page`    | False    | 1       | Number (1 to 20858) | Page number to be displayed.         |
 | `name`    | False    | None       | String | Name of the model you want to find.         |
+| `type`    | False    | None       | String | Type of models you want to see.        |
+| `createdBy`    | False    | None       | String | Find models by author username.        |
 
 ### Users
 

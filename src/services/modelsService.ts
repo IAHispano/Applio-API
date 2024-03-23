@@ -19,12 +19,47 @@ export const findByName = async (searchTerm: string) => {
   }
 };
 
-export const findByType = async (searchType: string) => {
+export const findByAlgorithm = async (
+  searchType: string,
+  page: number = 1,
+  pageSize: number = maxPageSize
+  ) => {
   try {
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
     const { data, error } = await supabaseClient
       .from("models")
       .select("*")
-      .ilike("type", `%${searchType}%`);
+      .ilike("algorithm", `%${searchType}%`)
+      .range(startIndex, endIndex - 1);
+
+    if (error) {
+      console.error("Error when searching by algorithm", error);
+      return [];
+    }
+
+    return data || [];
+  } catch (error) {
+    console.error("Error when searching by algorithm", error);
+    return [];
+  }
+};
+
+export const findByType = async (
+  searchType: string,
+  page: number = 1,
+  pageSize: number = maxPageSize
+  ) => {
+  try {
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    const { data, error } = await supabaseClient
+      .from("models")
+      .select("*")
+      .ilike("type", `%${searchType}%`)
+      .range(startIndex, endIndex - 1);
 
     if (error) {
       console.error("Error when searching by type", error);
@@ -78,33 +113,6 @@ export const getEntriesEasyPaged = async (
     return data || [];
   } catch (error) {
     console.error("Error getting paged data", error);
-    return [];
-  }
-};
-
-export const getEntriesFilteredByType = async (
-  page: number = 1,
-  pageSize: number = maxPageSize,
-  type: string
-) => {
-  try {
-    const startIndex = (page - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-
-    const { data, error } = await supabaseClient
-      .from("models")
-      .select("*")
-      .filter("type", "ilike", `%${type}%`)
-      .range(startIndex, endIndex - 1);
-
-    if (error) {
-      console.error("Error getting filtered data by type", error);
-      return [];
-    }
-
-    return data || [];
-  } catch (error) {
-    console.error("Error getting filtered data by type", error);
     return [];
   }
 };

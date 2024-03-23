@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
 import { findByName, getEntriesEasyPaged } from "../services/guidesService";
-import { maxPageSizeHandler } from "../utils/error/maxPageSizeHandler";
+import { maxPageSize } from "../config";
 
 const guides = new Hono();
 
@@ -11,7 +11,11 @@ guides.get("/", async (c) => {
     let pageSize = Number(c.req.header("perPage")) || 20;
     const title = c.req.header("title");
 
-    maxPageSizeHandler(c, pageSize);
+    if (pageSize > maxPageSize) {
+      const message = `Page size cannot exceed, the max page size is ${maxPageSize}.`;
+      console.log(message);
+      return c.text(message, 400);
+    }
 
     if (title) {
       const data = await findByName(title);
