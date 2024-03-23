@@ -1,33 +1,31 @@
 import { Hono } from "hono";
 import { errorHandler } from "../utils/error/errorHandler";
 import { getBlogs, getBlogsByTitle } from "../services/blogsService";
+import { maxPerPage, minPage } from "../config";
 
-const max_page_size = 20;
 const blogs = new Hono();
 
 blogs.get("/", async (c) => {
   try {
-    const page = Number(c.req.header("page")) || 1;
-    let pageSize = Number(c.req.header("perPage")) || 20;
     const title = c.req.header("title");
-
-    if (pageSize > max_page_size) {
-      return c.text(
-        `Page size cannot exceed, the max page size is ${max_page_size}.`,
-        400
-      );
-    }
+    const page = Number(c.req.header("page")) || minPage;
+    const pageSize = Number(c.req.header("perPage")) || maxPerPage;
 
     if (title) {
       const data = await getBlogsByTitle(title);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
       return c.json(data);
     }
 
     if (!title) {
-    const data = await getBlogs(page, pageSize);
-    return c.json(data);
+      const data = await getBlogs(page, pageSize);
+      if (data.length === 0) {
+        return c.json({ message: "No results found." });
+      }
+      return c.json(data);
     }
-
   } catch (error) {
     return errorHandler(c, error);
   }

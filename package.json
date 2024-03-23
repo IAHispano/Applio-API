@@ -4,7 +4,8 @@
   "description": "Robust functionality, focused on granting convenient access to AI models developed using the RVC technology.",
   "main": "index.js",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "prettier": "bunx prettier --write ."
   },
   "keywords": [
     "AI",

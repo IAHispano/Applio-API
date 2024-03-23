@@ -1,6 +1,9 @@
-import { supabaseClient, maxPageSize } from "../config";
+import { supabaseClient, maxPerPage, minPage } from "../config";
 
-export const getEntriesEasyPaged = async (page: number = 1, pageSize: number = maxPageSize) => {
+export const getEntriesEasyPaged = async (
+  page: number = minPage,
+  pageSize: number = maxPerPage,
+) => {
   try {
     const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;

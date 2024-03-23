@@ -11,8 +11,8 @@ models.get("/", async (c) => {
     const type = c.req.header("type");
     const username = c.req.header("createdBy")
     const algorithm = c.req.header("algorithm");
-    const page = Number(c.req.header("page")) || 1;
-    let pageSize = Number(c.req.header("perPage")) || 20;
+    const page = Number(c.req.header("page")) || minPage;
+    const pageSize = Number(c.req.header("perPage")) || maxPerPage;
 
     if (pageSize > maxPageSize) {
       const message = `Page size cannot exceed, the max page size is ${maxPageSize}.`;
@@ -51,7 +51,7 @@ models.get("/", async (c) => {
     }
 
   } catch (error) {
-    models.onError(errorHandler);
+    return errorHandler(c, error);
   }
 });
 
