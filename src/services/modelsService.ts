@@ -22,7 +22,7 @@ export const findByName = async (searchTerm: string) => {
 export const findByAlgorithm = async (
   searchType: string,
   page: number = 1,
-  pageSize: number = maxPageSize
+  pageSize: number = maxPerPage
   ) => {
   try {
     const startIndex = (page - 1) * pageSize;
@@ -49,7 +49,7 @@ export const findByAlgorithm = async (
 export const findByType = async (
   searchType: string,
   page: number = 1,
-  pageSize: number = maxPageSize
+  pageSize: number = maxPerPage
   ) => {
   try {
     const startIndex = (page - 1) * pageSize;

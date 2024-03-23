@@ -16,7 +16,6 @@ export const maxPerPage = parseInt(process.env.MAX_PAGE_SIZE || "20");
 export const minPage = parseInt(process.env.MIN_PAGE || "1");
 
 // Rates
-export const premiumRateLimit = parseInt(process.env.premiumRateLimit || "300");
 export const defaultRateLimit = parseInt(process.env.defaultRateLimit || "100");
 
 // Supabase
