@@ -9,7 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const findByName = async (searchTerm: string) => {
   try {
-    const { data, error } = await supabase
+    const { data, error} = await supabase
       .from('models')
       .select('')
       .textSearch('name', `'${searchTerm}'`);
@@ -18,7 +18,9 @@ export const findByName = async (searchTerm: string) => {
       console.error('Error when searching by name', error);
       return [];
     }
-    let filteredData = data.filter(x => x.name.toLowerCase().includes(searchTerm))
+    const filteredData = data.filter(model =>
+      model.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     return filteredData || [];
   } catch (error) {
     console.error('Error when searching by name', error);
