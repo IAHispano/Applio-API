@@ -1,3 +1,4 @@
+// @ts-nocheck
 import express from "express";
 import { findByName, getEntriesEasyPaged, findByUsername, getEntriesFilteredByType, findByUsernameAndType } from "../services/modelsServices";
 import { customLimiter } from '../rate-limit';

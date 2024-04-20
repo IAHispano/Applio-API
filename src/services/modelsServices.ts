@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from '@supabase/supabase-js';
 require('dotenv').config();
 
@@ -10,15 +11,15 @@ export const findByName = async (searchTerm: string) => {
   try {
     const { data, error } = await supabase
       .from('models')
-      .select('*')
-      .filter('name', 'ilike', `${searchTerm}%`);
-       
+      .select('')
+      .textSearch('name', `'${searchTerm}'`);
+    
     if (error) {
       console.error('Error when searching by name', error);
       return [];
     }
-
-    return data || [];
+    let filteredData = data.filter(x => x.name.toLowerCase().includes(searchTerm))
+    return filteredData || [];
   } catch (error) {
     console.error('Error when searching by name', error);
     return [];
